@@ -6,4 +6,12 @@ __requires__ = ('setuptools >=36.3.0', )
 
 from setuptools import setup
 
-__name__ == '__main__' and setup(use_scm_version=True)
+setup_params = {
+    'use_scm_version': True,
+    'setup_requires': [
+        'setuptools_scm>=1.15',
+        'setuptools_git>=1.2',
+    ]
+}
+
+__name__ == '__main__' and setup(**setup_params)
