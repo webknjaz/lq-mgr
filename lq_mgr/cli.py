@@ -8,7 +8,7 @@ from envparse import Env
 
 import urllib3
 
-import lq_mgr
+from . import manager as lq_mgr
 
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
