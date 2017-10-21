@@ -37,7 +37,12 @@ def print_api_result(result_obj):
             click.echo(f"{err_field.title()}: {result_obj[err_field]}")
         return
 
-    result_data = result_obj['data']
+    try:
+        result_data = result_obj['data']
+    except KeyError:
+        click.echo('API returned no data')
+        return
+
     if result_data:
         click.echo('Result data:')
         for result_row in result_data:
